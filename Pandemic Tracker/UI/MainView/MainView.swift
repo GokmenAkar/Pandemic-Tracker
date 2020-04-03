@@ -16,7 +16,7 @@ struct MainView: View {
     @State var selectedCountryHistoricalData = [Double]()
     var body: some View {
         ZStack(alignment: .topLeading) {
-            MapView(countries: $globalViewModel.countriesResponse, selectedCountry: $selectedCountry, selectedCountryHistoricalData:    $selectedCountryHistoricalData, response: globalViewModel.countryHistoricalData)
+            MapView(countries: $globalViewModel.countriesResponse, selectedCountry: $selectedCountry, selectedCountryHistoricalData:    $selectedCountryHistoricalData, countryHistoricalData: $globalViewModel.countryHistoricalData)
             LineView(data: selectedCountryHistoricalData, title: "Line chart", legend: "Full screen").padding()
 
             HStack(alignment: .top) {

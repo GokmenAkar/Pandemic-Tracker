@@ -14,7 +14,7 @@ struct MapView: UIViewRepresentable {
     @Binding var selectedCountry: CountriesResponse
     @Binding var selectedCountryHistoricalData: [Double]
     
-    let response: [CountryHistoricalResponse]
+    @Binding var countryHistoricalData: [CountryHistoricalResponse]
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
@@ -24,24 +24,23 @@ struct MapView: UIViewRepresentable {
         }
         
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-
+            
         }
         
         func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
             parent.filterSelectedCountry(countryName: view.annotation!.title!!)
             mapView.setCenter(view.annotation!.coordinate, animated: true)
         }
-
+        
     }
     
     func filterSelectedCountry(countryName: String) {
         DispatchQueue.global(qos: .background).async {
             self.selectedCountry = self.countries.filter { $0.country == countryName }.first!
-            let he = self.response.filter {
-                print($0.country)
-                return $0.country == countryName
-            }.first?.timeline.cases.map { Double($0.value) }
-            print(he)
+            let tee = self.countryHistoricalData
+                .filter { $0.country == countryName }
+                .first!.timeline.cases.map { Double($0.value) }.sorted { $0 < $1 }
+            
         }
     }
     
