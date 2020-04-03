@@ -17,6 +17,7 @@ final class NetworkService {
             .dataTaskPublisher(for: urlRequest)
             .map { $0.data }
             .decode(type: T.self, decoder: JSONDecoder())
+            
             .eraseToAnyPublisher()
         
     }
