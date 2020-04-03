@@ -12,6 +12,9 @@ import SwiftUI
 struct MapView: UIViewRepresentable {
     @Binding var countries: [CountriesResponse]
     @Binding var selectedCountry: CountriesResponse
+    @Binding var selectedCountryHistoricalData: [Double]
+    
+    let response: [CountryHistoricalResponse]
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapView
@@ -34,6 +37,11 @@ struct MapView: UIViewRepresentable {
     func filterSelectedCountry(countryName: String) {
         DispatchQueue.global(qos: .background).async {
             self.selectedCountry = self.countries.filter { $0.country == countryName }.first!
+            let he = self.response.filter {
+                print($0.country)
+                return $0.country == countryName
+            }.first?.timeline.cases.map { Double($0.value) }
+            print(he)
         }
     }
     

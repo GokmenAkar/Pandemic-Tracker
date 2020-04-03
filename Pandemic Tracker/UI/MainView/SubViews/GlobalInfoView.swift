@@ -26,7 +26,7 @@ struct GlobalInfoView: View {
             }
             
             HStack(spacing: 0) {
-                GlobalTitleText(title: "Active: ", value: allResponse.cases, type: .active)
+                GlobalTitleText(title: "Active: ", value: allResponse.active, type: .active)
             }
             
             HStack(spacing: 0) {

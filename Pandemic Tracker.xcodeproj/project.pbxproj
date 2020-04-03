@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		8B34BF5224372A0F00D519E5 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34BF5124372A0F00D519E5 /* EndPoints.swift */; };
 		8B34BF5424372A2500D519E5 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34BF5324372A2500D519E5 /* HTTPMethod.swift */; };
 		8B34BF5624372CCE00D519E5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B34BF5524372CCE00D519E5 /* MainView.swift */; };
+		8B6EE13D2437DF9B00E64FAB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6EE13C2437DF9B00E64FAB /* SwiftUICharts */; };
+		8BA3A8BE2437D75D00840533 /* CountryHistoricalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3A8BD2437D75D00840533 /* CountryHistoricalResponse.swift */; };
+		8BA3A8C02437D7A900840533 /* CountryHistoricalRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3A8BF2437D7A900840533 /* CountryHistoricalRequest.swift */; };
 		8BBCB3D9243789E6000B54FA /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCB3D8243789E6000B54FA /* Int+Extensions.swift */; };
 		8BBCB3DB24378DD6000B54FA /* CountriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCB3DA24378DD6000B54FA /* CountriesResponse.swift */; };
 		8BBCB3DD24378E16000B54FA /* CountriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBCB3DC24378E16000B54FA /* CountriesRequest.swift */; };
@@ -44,6 +47,8 @@
 		8B34BF5124372A0F00D519E5 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		8B34BF5324372A2500D519E5 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		8B34BF5524372CCE00D519E5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		8BA3A8BD2437D75D00840533 /* CountryHistoricalResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHistoricalResponse.swift; sourceTree = "<group>"; };
+		8BA3A8BF2437D7A900840533 /* CountryHistoricalRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHistoricalRequest.swift; sourceTree = "<group>"; };
 		8BBCB3D8243789E6000B54FA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		8BBCB3DA24378DD6000B54FA /* CountriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesResponse.swift; sourceTree = "<group>"; };
 		8BBCB3DC24378E16000B54FA /* CountriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRequest.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6EE13D2437DF9B00E64FAB /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +176,7 @@
 			children = (
 				8BDEEAA224377B65005324EC /* AllResponse.swift */,
 				8BBCB3DA24378DD6000B54FA /* CountriesResponse.swift */,
+				8BA3A8BD2437D75D00840533 /* CountryHistoricalResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 			children = (
 				8BDEEAA424377BF9005324EC /* AllRequest.swift */,
 				8BBCB3DC24378E16000B54FA /* CountriesRequest.swift */,
+				8BA3A8BF2437D7A900840533 /* CountryHistoricalRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -208,6 +216,9 @@
 			dependencies = (
 			);
 			name = "Pandemic Tracker";
+			packageProductDependencies = (
+				8B6EE13C2437DF9B00E64FAB /* SwiftUICharts */,
+			);
 			productName = "Pandemic Tracker";
 			productReference = 8B34BF352437293C00D519E5 /* Pandemic Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 8B34BF2C2437293B00D519E5;
+			packageReferences = (
+				8B6EE13B2437DF9B00E64FAB /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 8B34BF362437293C00D519E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BA3A8BE2437D75D00840533 /* CountryHistoricalResponse.swift in Sources */,
 				8BBCB3DF24379808000B54FA /* CountryView.swift in Sources */,
 				8BDEEAA524377BF9005324EC /* AllRequest.swift in Sources */,
 				8BC33D3E24377E850088D2E0 /* MapView.swift in Sources */,
@@ -278,6 +293,7 @@
 				8B34BF5424372A2500D519E5 /* HTTPMethod.swift in Sources */,
 				8B34BF3B2437293C00D519E5 /* SceneDelegate.swift in Sources */,
 				8B34BF4E243729C500D519E5 /* NetworkService.swift in Sources */,
+				8BA3A8C02437D7A900840533 /* CountryHistoricalRequest.swift in Sources */,
 				8BBCB3D9243789E6000B54FA /* Int+Extensions.swift in Sources */,
 				8B34BF5224372A0F00D519E5 /* EndPoints.swift in Sources */,
 				8B34BF3D2437293C00D519E5 /* BaseTabbarView.swift in Sources */,
@@ -474,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B6EE13B2437DF9B00E64FAB /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B6EE13C2437DF9B00E64FAB /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B6EE13B2437DF9B00E64FAB /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B34BF2D2437293B00D519E5 /* Project object */;
 }

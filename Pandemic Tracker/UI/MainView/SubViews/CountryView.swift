@@ -10,10 +10,7 @@ import SwiftUI
 
 struct CountryView: View {
     
-   
-    
     var country: CountriesResponse
-    
     
     var body: some View {
         VStack(alignment: .trailing) {
@@ -39,7 +36,7 @@ struct CountryView: View {
             }
             
             HStack(spacing: 0) {
-                GlobalTitleText(title: "Active: ", value: country.cases, type: .active)
+                GlobalTitleText(title: "Active: ", value: country.active, type: .active)
             }
             
             HStack(spacing: 0) {

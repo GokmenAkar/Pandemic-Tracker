@@ -12,7 +12,7 @@ import Combine
 class GlobalViewModel: ObservableObject {
     @Published var allResponse: AllResponse = AllResponse(cases: 0, deaths: 0, recovered: 0, updated: 0, active: 0, affectedCountries: 0)
     @Published var countriesResponse:[CountriesResponse] = [CountriesResponse]()
-    
+    @Published var countryHistoricalData: [CountryHistoricalResponse] = [CountryHistoricalResponse]()
     
     var service = NetworkService()
     var cancellable: AnyCancellable?
@@ -37,12 +37,10 @@ class GlobalViewModel: ObservableObject {
     func getInfoByCountries() {
         guard !isLoading else { return }
         isLoading = true
-
+        
         cancellable = service
             .baseRequest(request: CountriesRequest())
-            
             .receive(on: RunLoop.main)
-            
             .sink(receiveCompletion: { (completion) in
                 self.isLoading = false
                 switch completion {
@@ -52,7 +50,29 @@ class GlobalViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             }, receiveValue: { (response) in
+                self.isLoading = false
                 self.countriesResponse = response
+                self.getCountryHistoricalData()
+            })
+    }
+    
+    func getCountryHistoricalData() {
+        guard !isLoading else { return }
+        isLoading = true
+        cancellable = service
+            .baseRequest(request: CountryHistoricalRequest())
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { (completion) in
+                self.isLoading = false
+                switch completion {
+                case .finished:
+                    print("hehe")
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }, receiveValue: { (response) in
+                self.isLoading = false
+                self.countryHistoricalData = response
             })
     }
 }

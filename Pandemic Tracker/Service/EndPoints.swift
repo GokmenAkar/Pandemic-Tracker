@@ -11,7 +11,7 @@ import Foundation
 enum EndPoints: StringLiteralType {
     case countries = "countries/"
     case all       = "all"
-    case episode   = "v2/historical"
+    case historical = "v2/historical"
     case jhucsse   = "v2/jhucsse"
     
     var description: String {
