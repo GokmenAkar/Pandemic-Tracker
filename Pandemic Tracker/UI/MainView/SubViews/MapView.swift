@@ -37,10 +37,11 @@ struct MapView: UIViewRepresentable {
     func filterSelectedCountry(countryName: String) {
         DispatchQueue.global(qos: .background).async {
             self.selectedCountry = self.countries.filter { $0.country == countryName }.first!
-            let tee = self.countryHistoricalData
-                .filter { $0.country == countryName }
-                .first!.timeline.cases.map { Double($0.value) }.sorted { $0 < $1 }
-            
+//            let mappedCases = self.countryHistoricalData
+//                .filter { $0.country == countryName }
+//                .first!.timeline.cases.map { Double($0.value) }
+//                .sorted { $0 < $1 }
+//            self.selectedCountryHistoricalData = Array(mappedCases[mappedCases.count - 31..<mappedCases.count-1])
         }
     }
     

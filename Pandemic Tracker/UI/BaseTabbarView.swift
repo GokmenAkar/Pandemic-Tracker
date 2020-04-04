@@ -11,17 +11,30 @@ import MapKit
 
 struct BaseTabbarView: View {
     @State private var selection: Int = 0
+//    let gradient = LinearGradient(gradient: Gradient(colors: [,Color(hex: "0c7b93"),Color(hex: "27496d")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+
     var body: some View {
         TabView(selection: $selection) {
             MainView()
                 .tabItem {
                     VStack {
-                        Image(systemName: "map")
+                        Image(systemName: "globe")
                         Text("Global")
                     }
-                }
+            }
                 .tag(0)
+            
+            NewsView()
+                .tabItem {
+                VStack {
+                    Image(systemName: "n.circle")
+                    Text("News")
+                }
+            }
+            .tag(1)
         }
+        .accentColor(Color(hex: "00a8cc"))
+        
     }
 }
 

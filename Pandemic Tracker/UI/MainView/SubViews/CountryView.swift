@@ -24,6 +24,10 @@ struct CountryView: View {
             }
             
             HStack(spacing: 0) {
+                GlobalTitleText(title: "Critical: ", value: country.critical, type: .cases)
+            }
+            
+            HStack(spacing: 0) {
                 GlobalTitleText(title: "Deaths: ", value: country.deaths, type: .death)
             }
             
@@ -37,10 +41,6 @@ struct CountryView: View {
             
             HStack(spacing: 0) {
                 GlobalTitleText(title: "Active: ", value: country.active, type: .active)
-            }
-            
-            HStack(spacing: 0) {
-                GlobalTitleText(title: "Critical: ", value: country.critical, type: .cases)
             }
             
             

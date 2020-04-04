@@ -18,7 +18,7 @@ struct CountriesResponse: Codable {
     let updated: Int
     
     static func getExample() -> CountriesResponse {
-        return CountriesResponse(country: "Turkey", countryInfo: CountryInfo(id: 792, iso2: "tr", iso3: "tr", lat: 39, long: 35, flag: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/tr.png"), cases: 100, todayCases: 100, deaths: 100, todayDeaths: 100, recovered: 100, active: 100, critical: 100, casesPerOneMillion: 100, deathsPerOneMillion: 100, updated: 1585928447598)
+        return CountriesResponse(country: "-", countryInfo: CountryInfo(id: 0, iso2: "-", iso3: "-", lat: 39, long: 35, flag: "-"), cases: 0, todayCases: 0, deaths: 0, todayDeaths: 0, recovered: 0, active: 0, critical: 0, casesPerOneMillion: 100, deathsPerOneMillion: 0, updated: 0)
     }
     
     var dangerColor: LinearGradient {

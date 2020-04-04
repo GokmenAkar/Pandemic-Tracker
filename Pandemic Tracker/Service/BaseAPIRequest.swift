@@ -12,6 +12,7 @@ class BaseAPIRequest<T: Codable> {
     private(set) var baseURL: String = "https://corona.lmao.ninja/"
     
     var apiPath: String { "" }
+    var apiVersion: String { "" } 
     var endPoint: EndPoints! { nil }
     
     var contentType: String { "application/json" }

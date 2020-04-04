@@ -13,6 +13,8 @@ enum EndPoints: StringLiteralType {
     case all       = "all"
     case historical = "v2/historical"
     case jhucsse   = "v2/jhucsse"
+    //News
+    case everything = "everything"
     
     var description: String {
         return self.rawValue

@@ -27,6 +27,7 @@ extension NetworkService {
     func urlRequestWith<T>(request: BaseAPIRequest<T>) -> URLRequest? {
         let completeURL: String =
                 request.baseURL +
+                request.apiVersion +
                 request.apiPath +
                 request.endPoint.description
         
