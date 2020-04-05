@@ -24,6 +24,8 @@
 		8B69D45424389B7E009D7602 /* NewsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69D45324389B7E009D7602 /* NewsImage.swift */; };
 		8B69D45624389E6E009D7602 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69D45524389E6E009D7602 /* String+Extensions.swift */; };
 		8B69D4592438A9FA009D7602 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69D4582438A9FA009D7602 /* LanguageView.swift */; };
+		8B69D45B2438C214009D7602 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69D45A2438C214009D7602 /* LoadingCell.swift */; };
+		8B69D45D2438C3BD009D7602 /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B69D45C2438C3BD009D7602 /* NewsDetailView.swift */; };
 		8B6EE13D2437DF9B00E64FAB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6EE13C2437DF9B00E64FAB /* SwiftUICharts */; };
 		8B77004924388F96001A0D4B /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77004824388F96001A0D4B /* NewsView.swift */; };
 		8B77004B243890AA001A0D4B /* NewsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77004A243890AA001A0D4B /* NewsRequest.swift */; };
@@ -61,6 +63,8 @@
 		8B69D45324389B7E009D7602 /* NewsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImage.swift; sourceTree = "<group>"; };
 		8B69D45524389E6E009D7602 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8B69D4582438A9FA009D7602 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
+		8B69D45A2438C214009D7602 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		8B69D45C2438C3BD009D7602 /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		8B77004824388F96001A0D4B /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		8B77004A243890AA001A0D4B /* NewsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRequest.swift; sourceTree = "<group>"; };
 		8B77004E243890BB001A0D4B /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			children = (
 				8B69D44E24389A7D009D7602 /* NewsCell.swift */,
 				8B69D45324389B7E009D7602 /* NewsImage.swift */,
+				8B69D45A2438C214009D7602 /* LoadingCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8B69D4582438A9FA009D7602 /* LanguageView.swift */,
+				8B69D45C2438C3BD009D7602 /* NewsDetailView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				8BBCB3DF24379808000B54FA /* CountryView.swift in Sources */,
 				8BDEEAA524377BF9005324EC /* AllRequest.swift in Sources */,
 				8B77004924388F96001A0D4B /* NewsView.swift in Sources */,
+				8B69D45D2438C3BD009D7602 /* NewsDetailView.swift in Sources */,
 				8BC33D3E24377E850088D2E0 /* MapView.swift in Sources */,
 				8BDEEAA324377B65005324EC /* AllResponse.swift in Sources */,
 				8B77004B243890AA001A0D4B /* NewsRequest.swift in Sources */,
@@ -362,6 +369,7 @@
 				8B69D45624389E6E009D7602 /* String+Extensions.swift in Sources */,
 				8B34BF392437293C00D519E5 /* AppDelegate.swift in Sources */,
 				8BC33D4124377FC60088D2E0 /* GlobalInfoView.swift in Sources */,
+				8B69D45B2438C214009D7602 /* LoadingCell.swift in Sources */,
 				8BBCB3DB24378DD6000B54FA /* CountriesResponse.swift in Sources */,
 				8BBCB3E12437A16C000B54FA /* Color+Extensions.swift in Sources */,
 				8B34BF5424372A2500D519E5 /* HTTPMethod.swift in Sources */,
@@ -440,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -494,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

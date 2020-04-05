@@ -22,14 +22,23 @@ struct NewsView: View {
             NavigationView {
                 if newsViewModel.newsResponse != nil {
                     if !newsViewModel.newsResponse!.articles.isEmpty {
-                        List(newsViewModel.newsResponse!.articles, id: \.self) { article in
-                            NewsCell(article: article)
-                                .navigationBarTitle("News")
-                                .navigationBarItems(trailing: Button("Source Language") {
-                                    self.showPopup.toggle()
+                        List(0...newsViewModel.newsResponse!.articles.count, id: \.self) { index in
+                            if index == self.newsViewModel.newsResponse!.articles.count {
+                                LoadingCell(vm: self.newsViewModel)
+                            } else {
+                                NavigationLink(destination:
+                                SafariView(url: self.newsViewModel.newsResponse!.articles[index].url!)
+                                    .navigationBarTitle("", displayMode: .inline)
+                                    .navigationBarHidden(true)) {
+                                    NewsCell(article: self.newsViewModel.newsResponse!.articles[index])
                                 }
-                                .foregroundColor(Color(hex: "00a8cc"))
-                            )
+                                    .navigationBarTitle("News")
+                                    .navigationBarItems(trailing: Button("Source Country") {
+                                        self.showPopup.toggle()
+                                    }
+                                    .foregroundColor(Color(hex: "00a8cc"))
+                                )
+                            }
                         }
                     } else {
                         Text("There is no news :(")

@@ -21,11 +21,13 @@ struct LanguageView: View {
         ScrollView(.vertical) {
             ForEach(languages, id: \.id) { language in
                 VStack(spacing: 4) {
-                    Text(language.acronym)
+                    Text(language.name)
                         .frame(maxWidth: .infinity)
+                        .multilineTextAlignment(.center)
                         .font(.system(size: 10, weight: .bold)).onTapGesture {
                             self.selectedLanguage = language.acronym
                             self.isSelected = false
+                            
                     }
                     Divider()
                 }
@@ -38,7 +40,6 @@ struct LanguageView: View {
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.9)))
 
     }
-    
     
 }
 

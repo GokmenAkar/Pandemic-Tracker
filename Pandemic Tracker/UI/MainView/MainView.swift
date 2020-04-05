@@ -16,7 +16,7 @@ struct MainView: View {
     @State var selectedCountryHistoricalData = [Double]()
     var body: some View {
         ZStack(alignment: .topLeading) {
-            MapView(countries: $globalViewModel.countriesResponse, selectedCountry: $selectedCountry, selectedCountryHistoricalData:    $selectedCountryHistoricalData, countryHistoricalData: $globalViewModel.countryHistoricalData)
+            MapView(countries: $globalViewModel.countriesResponse, selectedCountry: $selectedCountry, selectedCountryHistoricalData:    $selectedCountryHistoricalData, countryHistoricalData: $globalViewModel.countryHistoricalData).edgesIgnoringSafeArea(.all)
 
             HStack(alignment: .top) {
                 GlobalInfoView(allResponse: $globalViewModel.allResponse)
@@ -26,7 +26,7 @@ struct MainView: View {
                     .offset(x: -4, y: 24)
             }
         }
-        .edgesIgnoringSafeArea(.all)
+        
         .onAppear {
                 self.globalViewModel.getGlobalCases()
         }
