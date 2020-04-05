@@ -40,7 +40,7 @@ struct GlobalInfoView: View {
         .padding(4)
         
         .background(RoundedRectangle(cornerRadius: 10).stroke(LinearGradient(gradient: Gradient(colors: [Color(hex: "00a8cc"),Color(hex: "0c7b93"),Color(hex: "27496d")]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 4))
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.9)))
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.lightAndDark.opacity(0.9)))
 
     }
 }
@@ -59,7 +59,7 @@ struct GlobalTitleText: View {
             case .cases: return .orange
             case .death: return .red
             case .recovered: return .green
-            default: return .black
+            default: return .reverseLightAndDark
             }
         }
     }
@@ -83,6 +83,7 @@ struct GlobalTitleText: View {
 struct GlobalInfoView_Previews: PreviewProvider {
     static var previews: some View {
         GlobalInfoView(allResponse: .constant(GlobalViewModel().allResponse))
-        .previewLayout(.sizeThatFits)
+            .environment(\.colorScheme, .dark)
+            .previewLayout(.sizeThatFits)
     }
 }

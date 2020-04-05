@@ -34,3 +34,13 @@ extension Color {
         )
     }
 }
+
+extension Color {
+    static var lightAndDark: Color {
+        return Color("LightAndDark")
+    }
+    static var reverseLightAndDark: Color {
+        return Color("ReverseLightAndDark")
+    }
+    
+}

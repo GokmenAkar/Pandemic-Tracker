@@ -9,17 +9,21 @@
 import Foundation
 import SwiftUI
 import SafariServices
+import WebKit
 
-struct SafariView: UIViewControllerRepresentable {
-    typealias UIViewControllerType = SFSafariViewController
-    
+struct SafariView: UIViewRepresentable {
+    typealias UIViewType = WKWebView
+        
     let url: String
-    
-    func makeUIViewController(context: Context) -> SFSafariViewController {
-        return SFSafariViewController(url: URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!)
+
+    func makeUIView(context: Context) -> WKWebView {
+                let webView = WKWebView()
+                webView.load(URLRequest(url: URL(string: url)!))
+                return webView
     }
     
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: Context) {
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        
     }
 }
 

@@ -54,7 +54,7 @@ struct CountryView: View {
         }.padding(4)
             
             .background(RoundedRectangle(cornerRadius: 10).stroke(country.dangerColor, lineWidth: 4))
-            .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.9)))
+            .background(RoundedRectangle(cornerRadius: 10).fill(Color.lightAndDark.opacity(0.9)))
     }
 }
 

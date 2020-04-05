@@ -35,6 +35,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(selectedCountry: .getExample(), selectedCountryHistoricalData: [8,23,54,32,12,37,7,23,43])//selectedCountryHistoricalData: .init(country: "", province: "", timeline: Timeline(cases: ["String" : 0], deaths: ["String" : 0], recovered: ["String" : 0])))
+        MainView(selectedCountry: .getExample(), selectedCountryHistoricalData: [8,23,54,32,12,37,7,23,43]).environment(\.colorScheme, .dark)//selectedCountryHistoricalData: .init(country: "", province: "", timeline: Timeline(cases: ["String" : 0], deaths: ["String" : 0], recovered: ["String" : 0])))
     }
 }

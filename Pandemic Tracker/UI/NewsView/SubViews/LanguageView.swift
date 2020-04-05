@@ -37,7 +37,7 @@ struct LanguageView: View {
         .clipped()
         .frame(width: 120, height: 200)
         .background(RoundedRectangle(cornerRadius: 10).stroke(LinearGradient(gradient: Gradient(colors: [Color(hex: "00a8cc"),Color(hex: "0c7b93"),Color(hex: "27496d")]), startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 4))
-        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.9)))
+        .background(RoundedRectangle(cornerRadius: 10).fill(Color.lightAndDark.opacity(0.9)))
 
     }
     
@@ -48,6 +48,10 @@ struct LanguageView_Previews: PreviewProvider {
         LanguageView(languages: [Language](), selectedLanguage: .constant("tr"), isSelected: .constant(true))
     }
 }
+
+let availableLanguages = [
+    "ar","de","en","es","fr","tr","he","it","nl","no","pt","ru","se","ud","zh"
+]
 
 let languagesArray = [
     "AF" : "Afghanistan",
@@ -295,4 +299,6 @@ let languagesArray = [
     "YE" : "Yemen",
     "ZM" : "Zambia",
     "ZW" : "Zimbabwe",
-]
+    ].filter {
+        availableLanguages.contains($0.key.localizedLowercase)
+}
