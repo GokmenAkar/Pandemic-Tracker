@@ -12,8 +12,10 @@ import SwiftUI
 struct MapView: UIViewRepresentable {
     @Binding var countries: [CountriesResponse]
     @Binding var selectedCountry: CountriesResponse
-    @Binding var selectedCountryHistoricalData: [Double]
-    
+    @Binding var selectedCountryCases: [Double]
+    @Binding var selectedCountryDeaths: [Double]
+    @Binding var selectedCountryRecovered: [Double]
+
     @Binding var countryHistoricalData: [CountryHistoricalResponse]
     
     class Coordinator: NSObject, MKMapViewDelegate {
@@ -31,17 +33,23 @@ struct MapView: UIViewRepresentable {
             parent.filterSelectedCountry(countryName: view.annotation!.title!!)
             mapView.setCenter(view.annotation!.coordinate, animated: true)
         }
-        
     }
     
     func filterSelectedCountry(countryName: String) {
         DispatchQueue.global(qos: .background).async {
             self.selectedCountry = self.countries.filter { $0.country == countryName }.first!
-//            let mappedCases = self.countryHistoricalData
-//                .filter { $0.country == countryName }
-//                .first!.timeline.cases.map { Double($0.value) }
-//                .sorted { $0 < $1 }
-//            self.selectedCountryHistoricalData = Array(mappedCases[mappedCases.count - 31..<mappedCases.count-1])
+            
+            let countryTimeline = self.countryHistoricalData
+                .filter { $0.country == countryName }
+                .first!.timeline
+                
+            let mappedCases     = countryTimeline.cases.map { Double($0.value) }
+            let mappedDeaths    = countryTimeline.deaths.map { Double($0.value) }
+            let mappedRecovered = countryTimeline.recovered.map { Double($0.value) }
+            
+            self.selectedCountryCases     = Array(mappedCases[mappedCases.count - 30..<mappedCases.count-1])
+            self.selectedCountryDeaths    = Array(mappedDeaths[mappedDeaths.count - 30..<mappedDeaths.count-1])
+            self.selectedCountryRecovered = Array(mappedRecovered[mappedRecovered.count - 30..<mappedRecovered.count-1])
         }
     }
     
@@ -65,7 +73,6 @@ struct MapView: UIViewRepresentable {
                 let annotation = MKPointAnnotation()
                 annotation.title = country.country
                 annotation.coordinate = CLLocationCoordinate2D(latitude: country.countryInfo.lat, longitude: country.countryInfo.long)
-                
                 annotations.append(annotation)
             }
             
