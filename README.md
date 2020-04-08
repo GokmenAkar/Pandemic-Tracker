@@ -8,7 +8,7 @@ The purpose of this project is to improve my SwiftUI and Combine skills.
 
 ### __Usage__
 
-You can simply download the project and run on any device. The app will pull latest cases from API and show to the user detailed information in selected country's info box. In news tab, user will face with news. There will be latest news about Covid-19, you can specialize the news by language simply select the country and the app will bring you the latest news of selected country.
+You can simply download the project and run on any device. The app will pull latest cases from API and show to the user detailed information in selected country's info box. In news tab, user will see the news. There will be latest news about Covid-19, you can specialize the news by language simply select the country and the app will bring you the latest news of selected country.
 
 ### __APIs__
 
