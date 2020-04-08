@@ -8,18 +8,18 @@ The purpose of this project is to improve my SwiftUI and Combine skills.
 
 ### __Usage__
 
-You can simply download the project and run on any device. The app will pull latest cases from API and show to the user detailed information in selected country's info box. In news tab, user will see the news. There will be latest news about Covid-19, you can specialize the news by language simply select the country and the app will bring you the latest news of selected country.
+You can simply download the project and run on any device. The app will pull the latest cases from API and show to the user detailed information in the selected country's info box. In the news tab, user will see the news. There will be the latest news about COVID-19, you can specialize the news by language simply select the country and the app will bring you the latest news of the selected country.
 
 ### __APIs__
 
-For news,
+For the news,
 
 https://newsapi.org/
 
-For latest detailed information, 
+For the latest detailed information, 
 
 https://corona.lmao.ninja/
 
 ### __Contribution__
 
-If you want to contribute feel free to send pull request.
+If you want to contribute feel free to send a pull request.
