@@ -16,7 +16,7 @@ For the news,
 
 https://newsapi.org/
 
-For the latest detailed information, 
+For the latest case information, 
 
 https://corona.lmao.ninja/
 
